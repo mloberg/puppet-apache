@@ -1,0 +1,12 @@
+<Directory <%= @vhost_docroot %>>
+    AllowOverride ALL
+    Order Allow,Deny
+    Allow from all
+</Directory>
+
+<VirtualHost *:<%= scope.lookupvar('apache::config::port') %>>
+    DocumentRoot "<%= @vhost_docroot %>"
+    ServerName <%= @hostname %>
+    ErrorLog "<%= scope.lookupvar "apache::config::logdir" %>/<%= @name %>-error_log"
+    CustomLog "<%= scope.lookupvar "apache::config::logdir" %>/<%= @name %>-access_log" common
+</VirtualHost>
