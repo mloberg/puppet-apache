@@ -1,3 +1,12 @@
+# Tap formulas into homebrew
+#
+# Examples
+#
+#   apache::homebrew::tap { 'homebrew/apache': }
+#   apache::homebrew::tap { 'tap/name':
+#     ensure => absent,
+#   }
+#
 define apache::homebrew::tap (
   $ensure = present,
 ) {

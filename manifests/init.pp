@@ -1,3 +1,5 @@
+# Install Apache
+#
 class apache {
   require apache::config
   include apache::homebrew::apache
@@ -6,7 +8,7 @@ class apache {
     content => template('apache/org.apache.httpd.plist.erb'),
     owner   => 'root',
     group   => 'wheel',
-    notify  => Service["org.apache.httpd"],
+    notify  => Service['org.apache.httpd'],
   }
 
   file { [
@@ -23,7 +25,7 @@ class apache {
     content => template('apache/config/httpd.conf.erb'),
     owner   => 'root',
     group   => 'wheel',
-    notify  => Service["org.apache.httpd"],
+    notify  => Service['org.apache.httpd'],
   }
 
   file { "${boxen::config::envdir}/apache.sh":

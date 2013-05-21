@@ -1,3 +1,12 @@
+# Add a vhost to Apache
+#
+# Example:
+#
+#   apache::vhost { 'site-name':
+#     docroot => '/path/to/site',
+#     host    => 'site-name.dev',
+#   }
+#
 define apache::vhost (
   $ensure  = present,
   $docroot = undef,
