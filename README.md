@@ -1,5 +1,7 @@
 # Apache Puppet Module for Boxen
 
+[![Build Status](https://travis-ci.org/mloberg/puppet-apache.png?branch=master)](https://travis-ci.org/mloberg/puppet-apache)
+
 Manage Apache.
 
 ## Usage
